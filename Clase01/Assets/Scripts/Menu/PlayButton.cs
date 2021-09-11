@@ -17,7 +17,7 @@ public class PlayButton : MonoBehaviour
 
     void GoSceneGame(){
         Debug.Log("Vamos a la escena Game");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Game");
     }
 
     // Update is called once per frame
