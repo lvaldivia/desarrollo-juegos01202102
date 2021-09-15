@@ -15,6 +15,14 @@ public class DificultyButton : MonoBehaviour
         check.SetActive(false);
         btn = GetComponent<Button>();
         btn.onClick.AddListener(ChangeDificulty);
+        if(PlayerPrefs.HasKey("level")){
+            int _level = PlayerPrefs.GetInt("level");
+            if(_level == level){
+                check.SetActive(true);
+            }
+            //PlayerPrefs.DeleteKey("level");
+            //PlayerPrefs.DeleteAll();
+        }
     }
 
     // Update is called once per frame
@@ -24,6 +32,8 @@ public class DificultyButton : MonoBehaviour
         {
             button.GetComponent<DificultyButton>().ResetCheck();
         }
+        PlayerPrefs.SetInt("level",level);
+        PlayerPrefs.Save();
         check.SetActive(true);
     }
 

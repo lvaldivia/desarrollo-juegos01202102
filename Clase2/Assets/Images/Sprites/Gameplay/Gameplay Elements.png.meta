@@ -1,7 +1,40 @@
 fileFormatVersion: 2
 guid: 37b92e748ea16ba43953112bc58e04e1
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4815254528902312000
+    second: Gameplay Elements_0
+  - first:
+      213: -6607178875853909384
+    second: Gameplay Elements_1
+  - first:
+      213: 7628800268639793799
+    second: Gameplay Elements_2
+  - first:
+      213: -4504691372432430140
+    second: Gameplay Elements_3
+  - first:
+      213: 7598859861329351719
+    second: Gameplay Elements_4
+  - first:
+      213: -1040884793168151050
+    second: Gameplay Elements_5
+  - first:
+      213: -5855533656667214535
+    second: Gameplay Elements_6
+  - first:
+      213: 8809548645194950162
+    second: Gameplay Elements_7
+  - first:
+      213: -2395938884929929944
+    second: Gameplay Elements_8
+  - first:
+      213: -9025154192369482263
+    second: Gameplay Elements_9
+  - first:
+      213: 3608698807706474634
+    second: Gameplay Elements_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +74,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +108,252 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Gameplay Elements_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 279
+        width: 191
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04030525b7833d240800000000000000
+      internalID: 4815254528902312000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_1
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 259
+        width: 43
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872534991d59e44a0800000000000000
+      internalID: -6607178875853909384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 241
+        width: 192
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 782fdaadc61fed960800000000000000
+      internalID: 7628800268639793799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 212
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbe56b401f1c71c0800000000000000
+      internalID: -4504691372432430140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 193
+        width: 170
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 724928c88c2947960800000000000000
+      internalID: 7598859861329351719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 148
+        width: 172
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd3b13abc80e81f0800000000000000
+      internalID: -1040884793168151050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_6
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 147
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93da108c927fcbea0800000000000000
+      internalID: -5855533656667214535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 102
+        width: 172
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2166e5c51ddc14a70800000000000000
+      internalID: 8809548645194950162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_8
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 44
+        width: 118
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82db434474aefbed0800000000000000
+      internalID: -2395938884929929944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_9
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 53
+        width: 84
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e580b0541630c280800000000000000
+      internalID: -9025154192369482263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gameplay Elements_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 162
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8858b6227ca41230800000000000000
+      internalID: 3608698807706474634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
