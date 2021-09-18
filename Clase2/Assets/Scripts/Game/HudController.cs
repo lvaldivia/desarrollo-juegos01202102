@@ -12,7 +12,8 @@ public class HudController : MonoBehaviour
     private Text txtLife;
     [SerializeField]
     private Text txtCoins;
-    private int life = 0;
+    [SerializeField]
+    private int life = 3;
     private int coins = 0;
     [SerializeField]
     private GameObject panel;
@@ -20,9 +21,13 @@ public class HudController : MonoBehaviour
     private Button btnQuit;
     [SerializeField]
     private Button btnResume;
+    [SerializeField]
+    private AudioClip clickClip;
 
     [SerializeField]
     private Button btnReady;
+
+    private AudioSource audioSource;
 
     public static HudController instance;
 
@@ -35,6 +40,9 @@ public class HudController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+        SoundManager.PlayAudiosource(audioSource);
         gameObject.SetActive(false);
         txtCoins.text = coins+"";
         txtLife.text = life+"";
@@ -47,14 +55,22 @@ public class HudController : MonoBehaviour
     }
 
     void ReadyGame(){
+        SoundManager.PlayClipAtPoint(clickClip,btnResume.transform.position);
         Time.timeScale = 1f;
         gameObject.SetActive(true);
         btnReady.gameObject.SetActive(false);
     }
 
     void ResumenGame(){
-        panel.SetActive(false);
-        Time.timeScale = 1f;
+        SoundManager.PlayClipAtPoint(clickClip,btnResume.transform.position);
+        if(life == 0){
+            Time.timeScale = 1f;
+            StateManager.changeScene("Game");
+        }else{
+            panel.SetActive(false);
+            Time.timeScale = 1f;
+        }
+       
     }
 
     void QuitGame(){
@@ -69,5 +85,24 @@ public class HudController : MonoBehaviour
     public void updateCoins(){
         coins++;
         txtCoins.text = coins+"";
+    }
+
+    public void updateLife(){
+        life++;
+        txtLife.text = life+"";
+    }
+
+    public int getLifes(){
+        return life;
+    }
+
+    public void reduceLife()
+    {
+        life--;
+        txtLife.text = life+"";
+        if(life == 0){
+            Time.timeScale = 0f;
+            panel.SetActive(true);
+        }
     }
 }

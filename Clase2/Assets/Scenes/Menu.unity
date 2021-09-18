@@ -930,6 +930,7 @@ MonoBehaviour:
   btnHighScore: {fileID: 784265044}
   btnOptions: {fileID: 1249560941}
   btnQuit: {fileID: 1149865926}
+  clickClip: {fileID: 8300000, guid: 136af7cc88f06454eb1e3128564a1aab, type: 3}
 --- !u!1 &1978447570
 GameObject:
   m_ObjectHideFlags: 0

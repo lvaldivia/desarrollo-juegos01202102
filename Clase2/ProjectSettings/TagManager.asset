@@ -8,6 +8,8 @@ TagManager:
   - Cloud
   - BadCloud
   - Background
+  - Life
+  - Coin
   layers:
   - Default
   - TransparentFX

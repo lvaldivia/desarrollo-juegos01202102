@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7288215185250314696}
   - component: {fileID: 7288215185250314703}
   - component: {fileID: 7288215185250314702}
+  - component: {fileID: 735327981}
   m_Layer: 0
   m_Name: Cloud1
   m_TagString: Cloud
@@ -69,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1795495345
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7598859861329351719, guid: 37b92e748ea16ba43953112bc58e04e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -116,3 +117,24 @@ PolygonCollider2D:
       - {x: -0.24, y: -0.21499999}
       - {x: 0.22, y: -0.21499999}
       - {x: 0.86331, y: 0.044304036}
+--- !u!50 &735327981
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7288215185250314701}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

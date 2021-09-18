@@ -12,6 +12,8 @@ public class CloudSpawner : MonoBehaviour
     private float lastCloudPositionY;
     private int controllX;
     private GameObject player;
+    [SerializeField]
+    private GameObject[] collectables;
     //TODO implementar monedas
 
     private void Awake() {
@@ -19,6 +21,9 @@ public class CloudSpawner : MonoBehaviour
         SetMinAndMax();
         CreateClouds(); 
         player = GameObject.Find("Player");
+        for(int i=0;i<collectables.Length;i++){
+            collectables[i].SetActive(false);
+        }
     }
 
     void Start()
@@ -59,34 +64,41 @@ public class CloudSpawner : MonoBehaviour
         maxX = bounds.x -0.5f;
     }
 
-    void CreateClouds(){
-        Shuffle(clouds);
-        float positionY = 0;
-        for (int i = 0; i < clouds.Length; i++)
-        {
-            Vector3 temp = clouds[i].transform.position;
-            temp.y = positionY;
-            if(controllX == 0){
-                temp.x = Random.Range(0,maxX);
-                controllX = 1;
-            }
-            if(controllX == 1){
-                temp.x = Random.Range(0,minX);
-                controllX = 2;
-            }
-            if(controllX == 2){
-                temp.x = Random.Range(1.0f,maxX);
-                controllX = 3;
-            }
-            if(controllX == 3){
-                temp.x = Random.Range(-1.0f,minX);
-                controllX = 0;
-            }
-            lastCloudPositionY = positionY;
-            clouds[i].transform.position = temp;
-            positionY -= distaceBetweenClouds;
-        }
-    }
+	void CreateClouds() {
+		Shuffle (clouds);
+
+		float positionY = 0;
+
+		for(int i = 0; i < clouds.Length; i++) {
+
+			Vector3 temp = clouds[i].transform.position;
+			temp.y = positionY;
+			if(controllX == 0) {
+				temp.x = Random.Range(0, maxX);
+				controllX = 1;
+				
+			} else if(controllX == 1) {
+				
+				temp.x = Random.Range(0, minX);
+				controllX = 2;
+				
+			} else if(controllX == 2) {
+				
+				temp.x = Random.Range(1.0f, maxX);
+				controllX = 3;
+				
+			} else if(controllX == 3) {
+				
+				temp.x = Random.Range(-1.0f, minX);
+				controllX = 0;
+			}
+			lastCloudPositionY = positionY;
+			clouds[i].transform.position = temp;
+			positionY -= distaceBetweenClouds;
+
+		}
+
+	}
 
     void Shuffle(GameObject[] array){
         for (int i = 0; i < array.Length; i++)
@@ -98,9 +110,63 @@ public class CloudSpawner : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private void OnTriggerEnter2D(Collider2D other) {
+       if(other.tag == "BadCloud" || other.tag == "Cloud"){
+           if(other.transform.position.y == lastCloudPositionY){
+               Vector3 temp = other.transform.position;
+               Shuffle(clouds);
+               for(int i=0;i<clouds.Length;i++){
+                   if(!clouds[i].activeInHierarchy){
+                       if(controllX == 0) {
+                            temp.x = Random.Range(0, maxX);
+                            controllX = 1;
+                            
+                        } else if(controllX == 1) {
+                            
+                            temp.x = Random.Range(0, minX);
+                            controllX = 2;
+                            
+                        } else if(controllX == 2) {
+                            
+                            temp.x = Random.Range(1.0f, maxX);
+                            controllX = 3;
+                            
+                        } else if(controllX == 3) {
+                            
+                            temp.x = Random.Range(-1.0f, minX);
+                            controllX = 0;
+                        }
+                        temp.y -= distaceBetweenClouds;
+                        lastCloudPositionY = temp.y;
+                        clouds[i].transform.position = temp;
+                        clouds[i].SetActive(true);
+
+                        int random = Random.Range(0,collectables.Length);
+                        if(clouds[i].tag != "BadCloud"){
+                            if(!collectables[random].activeInHierarchy){
+                                if(collectables[random].tag == "Life"){
+                                    if(HudController.instance.getLifes()< 2){
+                                        collectables[random].SetActive(true);
+                                        collectables[random].transform.position =
+                                        new Vector3(clouds[i].transform.position.x,
+                                        clouds[i].transform.position.y + 0.7f,
+                                        clouds[i].transform.position.z
+                                        );
+                                    }
+                                }else{
+                                    collectables[random].SetActive(true);
+                                     collectables[random].transform.position =
+                                        new Vector3(clouds[i].transform.position.x,
+                                        clouds[i].transform.position.y + 0.7f,
+                                        clouds[i].transform.position.z
+                                    );
+                                }
+                            }
+                        }
+                        //ACA SE IMPLEMENTA LOS COLLECTABLES
+                   }
+               }
+           }
+       }
+   }
 }

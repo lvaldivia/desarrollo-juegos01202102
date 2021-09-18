@@ -9,6 +9,7 @@ public class ButtonMenuController : MonoBehaviour
     public Button btnHighScore;
     public Button btnOptions;
     public Button btnQuit;
+    public AudioClip clickClip;
     void Start()
 
     {
@@ -19,14 +20,17 @@ public class ButtonMenuController : MonoBehaviour
     }
 
     void GoGame(){
+        AudioSource.PlayClipAtPoint(clickClip,btnStart.gameObject.transform.position);
         StateManager.changeScene("Game");
     }
 
     void GoHighScore(){
+        AudioSource.PlayClipAtPoint(clickClip,btnHighScore.gameObject.transform.position);
         StateManager.changeScene("HighScore");
     }
 
     void GoOptions(){
+        AudioSource.PlayClipAtPoint(clickClip,btnOptions.gameObject.transform.position);
         StateManager.changeScene("Options");
     }
 

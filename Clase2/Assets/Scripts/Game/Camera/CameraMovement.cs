@@ -12,6 +12,11 @@ public class CameraMovement : MonoBehaviour
     private float easySpeed = 3.2f;
     private float mediumSpeed = 3.7f;
     private float hardSpeed = 4.2f;
+    public static CameraMovement instance;
+    
+    private void Awake() {
+        instance = this;
+    }
     void Start()
     {
         if(PlayerPrefs.HasKey("level")){
@@ -39,6 +44,15 @@ public class CameraMovement : MonoBehaviour
     }
 
     void MoveCamera(){
-        
+        Vector3 temp = transform.position;
+        float oldY = temp.y;
+        float newY = temp.y - (speed * Time.deltaTime);        
+        temp.y = Mathf.Clamp(temp.y,oldY,newY);
+
+        transform.position = temp;
+        speed += accelaration*Time.deltaTime;
+        if(speed>maxSpeed){
+            speed = maxSpeed;
+        }
     }
 }

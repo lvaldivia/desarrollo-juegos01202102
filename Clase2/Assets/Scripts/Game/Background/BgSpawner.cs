@@ -15,10 +15,12 @@ public class BgSpawner : MonoBehaviour
 
     void GetBackgroundsAndSetLastY(){
         backgrounds = GameObject.FindGameObjectsWithTag("Background");
+        
         lastY = backgrounds[0].transform.position.y;
 
         for (int i = 1; i < backgrounds.Length; i++)
         {
+            
             if(lastY > backgrounds[i].transform.position.y){
                 lastY = backgrounds[i].transform.position.y;
             }
