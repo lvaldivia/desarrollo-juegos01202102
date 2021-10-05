@@ -55,6 +55,7 @@ public class Bird : MonoBehaviour
             if(didFlap){
                 didFlap = false;
                 body.velocity = new Vector2(0,bounceSpede);
+                audioSource.PlayOneShot(flapClick);
             }
             if(body.velocity.y >=0){
                 transform.rotation = Quaternion.Euler(0,0,0);
@@ -63,7 +64,13 @@ public class Bird : MonoBehaviour
                 angle = Mathf.Lerp(0,-90,-body.velocity.y / 7);
                 transform.rotation = Quaternion.Euler(0,0,angle);
             }
-
         }  
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "PipeHolder"){
+            audioSource.PlayOneShot(pointClip);
+        }
+    }
+
 }

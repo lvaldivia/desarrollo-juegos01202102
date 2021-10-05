@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Floor
   - Background
+  - Pipe
+  - Gap
+  - PipeHolder
   layers:
   - Default
   - TransparentFX
@@ -15,10 +18,10 @@ TagManager:
   - UI
   - Background
   - Floor
-  - 
-  - 
-  - 
-  - 
+  - Pipe
+  - Bird
+  - Gap
+  - PiperHolder
   - 
   - 
   - 

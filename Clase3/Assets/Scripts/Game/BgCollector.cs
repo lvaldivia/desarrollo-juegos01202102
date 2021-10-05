@@ -31,16 +31,25 @@ public class BgCollector : MonoBehaviour
             }
             
         }
+    }   
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Background"){
+            Vector3 temp = other.transform.position;
+            float width = ((BoxCollider2D)other).size.x;
+            temp.x = lastBGX + width;
+            other.transform.position = temp;
+            lastBGX = temp.x;
+        }
+
+        if(other.tag == "Floor"){
+            Vector3 temp = other.transform.position;
+            float width = ((BoxCollider2D)other).size.x;
+            temp.x = lastGroundX + width;
+            other.transform.position = temp;
+            lastGroundX = temp.x;
+        }
     }
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

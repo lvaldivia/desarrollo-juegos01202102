@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7835357816932756952}
   - component: {fileID: 7835357816932756959}
   - component: {fileID: 4140383144962279565}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,3 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4eac8cb0e0e2d04a84a86609a0a8bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 7835357816932756959}
+  animator: {fileID: 7835357816932756956}
+  isAlive: 0
+  audioSource: {fileID: 0}
+  flapClick: {fileID: 0}
+  pointClip: {fileID: 0}
+  diedClip: {fileID: 0}
