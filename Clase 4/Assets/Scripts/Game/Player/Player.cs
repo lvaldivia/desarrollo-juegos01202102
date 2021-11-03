@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public float moveForce = 20f, jumpForce = 700f, maxVelocity =4f;
@@ -11,18 +11,81 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Animator anim;
     private bool moveLeft, moveRight;
+    public static Player instance;
+    [SerializeField]
+    private Button jumpButton;
 
     private void Awake() {
+        instance = this;
         InitializeVariables();
     }
 
     void InitializeVariables(){
         grounded = false;
-        //para usar alguna variable mas
+        jumpButton.onClick.AddListener(Jump);
+
     }
 
    private void FixedUpdate() {
        PlayerWalkKeyboard();
+       PlayerWalkJoystick();
+   }
+
+   public void SetMoveLeft(bool moveLeft){
+       this.moveLeft = moveLeft;
+       this.moveRight = !moveLeft;
+   }
+
+   public void Jump(){
+       if(grounded){
+           grounded = false;
+           body.AddForce(new Vector2(0,jumpForce));
+       }
+   }
+
+   public void StopMoving(){
+       this.moveLeft = false;
+       this.moveRight = false;
+   }
+
+   void PlayerWalkJoystick(){
+       float forceX = 0;
+       float vel = Mathf.Abs(body.velocity.x);
+       if(moveRight){
+           if(vel < maxVelocity){
+               if(grounded){
+                   forceX = moveForce;
+               }else{
+                   forceX = moveForce * 1.1f;
+               }
+           }
+           Vector3 scale = transform.localScale;
+           scale.x = 1f;
+           transform.localScale = scale;
+           anim.Play("Walking");
+       }else if(moveLeft){
+           if(vel < maxVelocity){
+              if(grounded){
+                   forceX = -moveForce;
+               }else{
+                   forceX = -moveForce * 1.1f;
+               }
+           }
+           Vector3 scale = transform.localScale;
+           scale.x = -1f;
+           transform.localScale = scale;
+           anim.Play("Walking");
+       }else {
+           anim.Play("Iddle");
+       }
+        body.AddForce(new Vector2(forceX,0));
+   }
+
+   public void BouncePlayer(float force){
+       if(grounded){
+           grounded = false;
+           body.AddForce(new Vector2(0,force));
+       }
    }
 
    void PlayerWalkKeyboard(){
